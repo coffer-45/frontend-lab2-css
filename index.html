@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Лабораторна робота №2: HTML-таблиця та CSS-зображення за варіантом 7 (номер у списку 67).">
+    <title>Вовк Андрій Андрійович · ІО-41 · Лабораторна №2 · Варіант 7 (№67)</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      /* Завдання 1: стилі таблиці розміщено безпосередньо в HTML-файлі. */
+      .variant-table {
+        width: 100%;
+        min-width: 680px;
+        table-layout: fixed;
+        border-collapse: collapse;
+        color: #071414;
+        text-align: left;
+      }
+      .variant-table caption {
+        padding-bottom: 14px;
+        color: #596368;
+        font-size: 13px;
+        text-align: left;
+      }
+      .variant-table td {
+        height: 58px;
+        padding: 12px 16px;
+        border: 2px solid #1c2929;
+        background-color: #fff;
+        font-size: clamp(14px, 1.5vw, 18px);
+        font-weight: 650;
+        overflow-wrap: anywhere;
+        transition: background-color .18s ease;
+      }
+      .variant-table tr:first-child > td { background-color: #078f8f; }
+      .variant-table tr:nth-child(2) > td { background-color: #f5f507; }
+      .variant-table tr:first-child:hover > td { background-color: #f5f507; }
+      .variant-table tr:nth-child(2):hover > td { background-color: #078f8f; }
+      /* Верхній лівий прямокутник зразка №7: дві окремі комірки без лінії між ними.
+         Так ПІБ і дані другого рядка залишаються в окремих комірках. */
+      .variant-table .top-left { border-bottom: 0; }
+      .variant-table .under-left { border-top: 0; }
+      @media (prefers-reduced-motion: reduce) {
+        .variant-table td { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="#top">АВ<span>.</span></a>
+        <nav aria-label="Розділи сторінки">
+          <a href="#table">Таблиця</a>
+          <a href="#figures">CSS-зображення</a>
+        </nav>
+        <span class="header-note">FE / ЛР 02</span>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero wrap" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Лабораторна робота <span>02 / CSS + HTML</span></p>
+          <h1 id="page-title">Таблиця.<br>Форма.<br><em>Трансформація.</em></h1>
+          <p class="hero-copy">Два завдання: відтворити структуру таблиці HTML та намалювати одну й ту саму фігуру двома CSS-підходами — позиціонуванням і трансформаціями.</p>
+        </div>
+        <div class="variant-badge">
+          <span>№ у списку</span><strong>67</strong>
+          <span class="badge-rule"></span>
+          <span>Зразок</span><strong>07</strong>
+        </div>
+      </section>
+
+      <section class="section section-light" id="table" aria-labelledby="table-title">
+        <div class="wrap section-grid">
+          <div class="section-side"><span>01</span><span>HTML / таблиця</span></div>
+          <div class="section-main">
+            <p class="section-kicker">Завдання 1 · зразок №7</p>
+            <h2 id="table-title">Комірки, що мають значення.</h2>
+            <p class="section-copy">Перший рядок — прізвище, ім’я, по батькові; другий — група, номер роботи та варіант. Наведіть курсор на рядки, щоб поміняти їхні кольори місцями.</p>
+            <div class="table-scroll" tabindex="0" role="region" aria-label="Таблиця варіанта 7 з горизонтальною прокруткою на вузьких екранах">
+              <table class="variant-table">
+                <caption>Вовк Андрій Андрійович · ІО-41 · ЛР №2 · зразок 7</caption>
+                <colgroup><col style="width: 26%"><col style="width: 26%"><col style="width: 24%"><col style="width: 24%"></colgroup>
+                <tbody>
+                  <tr><td class="top-left" colspan="2">Вовк</td><td>Андрій</td><td>Андрійович</td></tr>
+                  <tr><td class="under-left" colspan="2">ІО-41</td><td>ЛР №2</td><td>Зразок №7 · у списку №67</td></tr>
+                  <tr><td colspan="2"></td><td></td><td rowspan="2"></td></tr>
+                  <tr><td></td><td></td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="detail-note"><span class="note-dot"></span>Кольори рядків (nn = 07): <code>#078f8f</code> і <code>#f5f507</code>. CSS таблиці — у <code>index.html</code>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark" id="figures" aria-labelledby="figure-title">
+        <div class="wrap section-grid">
+          <div class="section-side"><span>02</span><span>CSS / зображення</span></div>
+          <div class="section-main">
+            <p class="section-kicker">Завдання 2 · зразок №7</p>
+            <h2 id="figure-title">Одна фігура.<br>Два способи.</h2>
+            <p class="section-copy">Чотири червоні точки навколо закругленого квадрата й чорні стрілки всередині. Жодних файлів зображень чи SVG — усе намальовано властивостями CSS.</p>
+            <div class="figure-grid">
+              <figure class="figure-card">
+                <div class="figure-stage">
+                  <div class="clock clock-position" role="img" aria-label="Білий закруглений квадрат із чотирма червоними точками та чорними стрілками вгору і праворуч">
+                    <span class="dot dot-top"></span><span class="dot dot-right"></span><span class="dot dot-bottom"></span><span class="dot dot-left"></span>
+                    <span class="hand hand-up"></span><span class="hand hand-right"></span>
+                  </div>
+                </div>
+                <figcaption><span>01 / position</span><strong>Координати</strong><small>Абсолютне позиціонування відносно квадрата.</small></figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-stage">
+                  <div class="clock clock-transform" role="img" aria-label="Такий самий білий закруглений квадрат із чотирма червоними точками та чорними стрілками вгору і праворуч">
+                    <span class="dot dot-top"></span><span class="dot dot-right"></span><span class="dot dot-bottom"></span><span class="dot dot-left"></span>
+                    <span class="hand hand-up"></span><span class="hand hand-right"></span>
+                  </div>
+                </div>
+                <figcaption><span>02 / transform</span><strong>Зсув від центру</strong><small>CSS Grid і трансформації, без позиціонування деталей.</small></figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer><div class="wrap footer-inner"><span>Вовк Андрій Андрійович · ІО-41</span><span>Лабораторна №2 / варіант за списком 67 → зразок 7</span></div></footer>
+  </body>
+</html>
